@@ -13,7 +13,6 @@
 
   <!-- HEADER -->
   <header class="topbar">
-
     <div class="logo"> 
       <img src="OriJin2.png" alt="OriJin"> 
     </div>
@@ -33,18 +32,17 @@
       <button class="btn-ghost" onclick="openPopup('loginPopup')">Connexion</button>
       <button class="btn-primary" onclick="openPopup('registerPopup')">Inscription</button>
       <button class="avatar-btn" id="profileToggle">
-        <span class="avatar-circle">O</span>
+        <span class="avatar-circle">J</span>
       </button>
 
       <div class="profile-menu" id="profileMenu">
-        <p class="profile-title">Profil OriJin</p>
-        <a href="#about">À propos</a>
-        <a href="#features">Compétences</a>
+        <p class="profile-title">Jin Kun</p>
+        <a href="#hero">Accueil</a>
+        <a href="#features">Fonctionnalités</a>
         <a href="#gallery">Galerie</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
-
   </header>
 
   <main>
@@ -72,30 +70,113 @@
         <p class="hero-status">Créativité opérationnelle</p>
       </div>
     </section>
-
-    <!-- FONCTIONNALITÉS -->
-    <section id="features" class="features">
-      <h2>Fonctionnalités clés</h2>
-      <p class="section-sub">
-        Tout ce dont tu as besoin pour montrer ce que tu sais faire, avec précision et style.
-      </p>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <h3>Automatisation avancée</h3>
-          <p>Scénarios intelligents, interactions dynamiques, logique front + back pour des expériences vivantes.</p>
+    <!-- À PROPOS -->
+    <section id="about" class="about">
+      <div class="about-content">
+        <div class="profile-photo-container">
+          <div class="profile-photo">
+            <img src="CV photo.jpg" alt="Photo de profil de Jin">
+            <div class="profile-badge">Developer</div>
+          </div>
         </div>
-        <div class="feature-card">
-          <h3>Tableaux de bord en temps réel</h3>
-          <p>Sections structurées, infos claires, mise en avant de tes projets et de tes stats perso.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Collaboration fluide</h3>
-          <p>Un site prêt à être montré à des recruteurs, amis, clients, ou à connecter à un backend.</p>
+        <div class="about-text">
+          <h2>À propos de Jin</h2>
+          <p class="section-sub">
+            Développeur créatif, passionné par les interface, les expériences fluides et les projets qui ont une vraie identité.
+          </p>
+          <p>Spécialisé design interactif et création d'expériences numériques mémorables. Je transforme des idées en réalité avec code et créativité.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">~1ans</span>
+              <span class="stat-label">Ans d'expérience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Projets réalisés</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">InDisponible</span>
+              <span class="stat-label">Satisfaction client</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- VIEWER -->
+    <div id="viewer" class="viewer">
+      <div class="viewer-content">
+        <img id="viewerImg" src="" alt="Photo en grand">
+        <div class="viewer-info">
+          <h3>Détail</h3>
+          <p id="viewerDesc"></p>
+          <p id="viewerTags" class="viewer-tags"></p>
+          <button id="viewerClose" class="btn-ghost small">Fermer</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFESSIONNEL - TUILES -->
+    <section id="professional" class="professional-tiles">
+      <div class="tiles-container">
+        <h2>Professionnel</h2>
+        <div class="tiles-grid">
+
+          <!-- Tuile Planning -->
+          <div class="tile planning-tile">
+            <div class="tile-icon">📅</div>
+            <h3>Planning</h3>
+            <p>Voir mon calendrier et ma disponibilité</p>
+            <button class="tile-btn" onclick="openPlanningModal()">Consulter</button>
+          </div>
+
+          <!-- Tuile CV/PDF -->
+          <div class="tile cv-tile">
+            <div class="tile-icon">📄</div>
+            <h3>CV & Ressources</h3>
+            <p>Télécharger mon CV et mes documents</p>
+            <input type="file" id="cvUpload" accept=".pdf" style="display:none;">
+            <button class="tile-btn" onclick="uploadCV()">Télécharger</button>
+          </div>
+
+          <!-- Tuile LinkedIn -->
+          <div class="tile linkedin-tile">
+            <div class="tile-icon">💼</div>
+            <h3>LinkedIn</h3>
+            <p>Consulter mon profil professionnel</p>
+            <a href="https://www.linkedin.com/in/jin-kun-b83a00237/" target="_blank" class="tile-btn">Visiter</a>
+          </div>
+
+          <!-- Tuile Email -->
+          <div class="tile email-tile">
+            <div class="tile-icon">✉️</div>
+            <h3>Email</h3>
+            <p id="email-display">Contacter par email</p>
+            <button class="tile-btn" onclick="copyToClipboard('email')">Copier Email</button>
+            <span id="email" style="display:none;">Jinyeun07@proton.me</span>
+          </div>
+
+          <!-- Tuile Téléphone -->
+          <div class="tile phone-tile">
+            <div class="tile-icon">📱</div>
+            <h3>Téléphone</h3>
+            <p id="phone-display">M'appeler directement</p>
+            <button class="tile-btn" onclick="copyToClipboard('phone')">Copier Numéro</button>
+            <span id="phone" style="display:none;">0778863504</span>
+          </div>
+
+          <!-- Tuile Documents PDF -->
+          <div class="tile documents-tile">
+            <div class="tile-icon">📑</div>
+            <h3>Documents</h3>
+            <p>Mes fichiers et présentations</p>
+            <button class="tile-btn" onclick="viewDocuments()">Voir Documents</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    
     <!-- GALERIE -->
     <section id="gallery" class="gallery-section">
       <div class="gallery-header">
@@ -128,27 +209,30 @@
 
       </div>
     </section>
+    
+      <!-- FONCTIONNALITÉS -->
+    <section id="features" class="features">
+      <h2>Fonctionnalités clés</h2>
+      <p class="section-sub">
+        Tout ce dont tu as besoin pour montrer ce que tu sais faire, avec précision et style.
+      </p>
 
-    <!-- VIEWER -->
-    <div id="viewer" class="viewer">
-      <div class="viewer-content">
-        <img id="viewerImg" src="" alt="Photo en grand">
-        <div class="viewer-info">
-          <h3>Détail</h3>
-          <p id="viewerDesc"></p>
-          <p id="viewerTags" class="viewer-tags"></p>
-          <button id="viewerClose" class="btn-ghost small">Fermer</button>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Automatisation avancée</h3>
+          <p>Scénarios intelligents, interactions dynamiques, logique front + back pour des expériences vivantes.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Tableaux de bord en temps réel</h3>
+          <p>Sections structurées, infos claires, mise en avant de tes projets et de tes stats perso.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Collaboration fluide</h3>
+          <p>Un site prêt à être montré à des recruteurs, amis, clients, ou à connecter à un backend.</p>
         </div>
       </div>
-    </div>
-
-    <!-- À PROPOS -->
-    <section id="about" class="about">
-      <h2>À propos de Jin</h2>
-      <p class="section-sub">
-        Développeur créatif, passionné par les interfaces sombres, le glow, les expériences fluides et les projets qui ont une vraie identité.
-      </p>
     </section>
+
 
     <!-- CONTACT -->
     <section id="contact" class="contact">
@@ -173,34 +257,81 @@
 
   </main>
 
+<!-- POPUPS -->
+
 <!-- POPUP CONNEXION --> 
- <div id="loginPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="loginTitle"> 
-    <div class="popup-frame"> 
-        <button class="popup-close" aria-label="Fermer" onclick="closePopup('loginPopup')">✕</button> 
-        <div class="popup-inner"> 
-            <div class="popup-icon">⬛</div> 
-            <h2 id="loginTitle">Se connecter</h2> 
-        <input type="email" placeholder="Email" aria-label="Email"> 
-        <input type="password" placeholder="Mot de passe" aria-label="Mot de passe"> 
-        <button class="btn-purple">Connexion</button> 
-        <p class="switch">Pas encore de compte ? <a href="#" onclick="switchPopup()">Créer un compte</a></p> 
+<div id="loginPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="loginTitle"> 
+  <div class="popup-frame"> 
+    <button class="popup-close" aria-label="Fermer" onclick="closePopup('loginPopup')">✕</button> 
+    <div class="popup-inner"> 
+      <div class="popup-icon">🔐</div> 
+      <h2 id="loginTitle">Se connecter</h2> 
+      <input type="email" placeholder="Email" aria-label="Email"> 
+      <input type="password" placeholder="Mot de passe" aria-label="Mot de passe"> 
+      <button class="btn-primary">Connexion</button> 
+      <p class="switch">Pas encore de compte ? <a href="#" onclick="switchPopup()">Créer un compte</a></p> 
     </div> 
+  </div> 
 </div> 
-</div> 
+
 <!-- POPUP INSCRIPTION --> 
- <div id="registerPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="registerTitle"> 
-        <div class="popup-frame"> <button class="popup-close" aria-label="Fermer" onclick="closePopup('registerPopup')">✕</button> <div class="popup-inner"> 
-
-            <div class="popup-icon">⬛</div> <h2 id="registerTitle">Rejoindre OriJin</h2> 
-
-            <input type="text" placeholder="Prénom" aria-label="Prénom"> 
-            <input type="text" placeholder="Nom" aria-label="Nom"> 
-            <input type="email" placeholder="Adresse email" aria-label="Adresse email"> 
-            <input type="password" placeholder="Mot de passe" aria-label="Mot de passe"> 
-            <button class="btn-purple">Créer mon compte</button> 
-            
- <p class="switch">Déjà un compte ? <a href="#" onclick="switchPopup()">Se connecter</a></p> 
+<div id="registerPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="registerTitle"> 
+  <div class="popup-frame"> 
+    <button class="popup-close" aria-label="Fermer" onclick="closePopup('registerPopup')">✕</button> 
+    <div class="popup-inner"> 
+      <div class="popup-icon">✨</div> 
+      <h2 id="registerTitle">Créer un compte</h2> 
+      <input type="text" placeholder="Prénom" aria-label="Prénom"> 
+      <input type="text" placeholder="Nom" aria-label="Nom"> 
+      <input type="email" placeholder="Email" aria-label="Email"> 
+      <input type="password" placeholder="Mot de passe" aria-label="Mot de passe"> 
+      <button class="btn-primary">Créer mon compte</button> 
+      <p class="switch">Déjà un compte ? <a href="#" onclick="switchPopup()">Se connecter</a></p> 
     </div> 
+  </div>
 </div>
+
+<!-- POPUP EMAIL -->
+<div id="emailPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="emailTitle">
+  <div class="popup-frame">
+    <button class="popup-close" aria-label="Fermer" onclick="closePopup('emailPopup')">✕</button>
+    <div class="popup-inner">
+      <div class="popup-icon">✉️</div>
+      <h2 id="emailTitle">Mon Email</h2>
+      <p class="popup-text">Jinyeun07@proton.me</p>
+      <button class="btn-primary" onclick="copyEmailPopup()">Copier l'email</button>
+      <a href="mailto:Jinyeun07@proton.me" class="btn-ghost">Envoyer un email</a>
+    </div>
+  </div>
+</div>
+
+<!-- POPUP TÉLÉPHONE -->
+<div id="phonePopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="phoneTitle">
+  <div class="popup-frame">
+    <button class="popup-close" aria-label="Fermer" onclick="closePopup('phonePopup')">✕</button>
+    <div class="popup-inner">
+      <div class="popup-icon">📱</div>
+      <h2 id="phoneTitle">Mon Téléphone</h2>
+      <p class="popup-text">0778863504</p>
+      <button class="btn-primary" onclick="copyPhonePopup()">Copier le numéro</button>
+      <a href="tel:0778863504" class="btn-ghost">M'appeler</a>
+    </div>
+  </div>
+</div>
+
+<!-- POPUP PLANNING -->
+<div id="planningPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="planningTitle">
+  <div class="popup-frame">
+    <button class="popup-close" aria-label="Fermer" onclick="closePopup('planningPopup')">✕</button>
+    <div class="popup-inner">
+      <div class="popup-icon">📅</div>
+      <h2 id="planningTitle">Mon Planning</h2>
+      <p class="popup-text">Consultez ma disponibilité</p>
+      <button class="btn-primary" onclick="window.open('https://calendly.com', '_blank')">Voir Calendly</button>
+      <p style="color: var(--muted); font-size: 12px; margin-top: 20px;">Lien Calendly à intégrer</p>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
