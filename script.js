@@ -205,4 +205,10 @@ document.addEventListener('click', (e) => {
     if(viewer) { viewer.style.display = 'none'; document.body.style.overflow = ''; }
   }
 });
-
+function copyToClipboard(elementId) {
+  if (elementId === 'email') {
+    openPopup('emailPopup');
+  } else if (elementId === 'phone') {
+    openPopup('phonePopup');
+  }
+}
