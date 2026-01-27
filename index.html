@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>OriJin • Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="favicon2.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="topbar">
+
+    <div class="logo"> 
+      <img src="OriJin2.png" alt="OriJin"> 
+    </div>
+
+    <nav class="nav-links">
+      <a href="#hero">Accueil</a>
+      <a href="#features">Fonctionnalités</a>
+      <a href="#gallery">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-search">
+      <input type="text" id="headerSearch" placeholder="Rechercher...">
+    </div>
+
+    <div class="right-actions">
+      <button class="btn-ghost" onclick="openPopup('loginPopup')">Connexion</button>
+      <button class="btn-primary" onclick="openPopup('registerPopup')">Inscription</button>
+      <button class="avatar-btn" id="profileToggle">
+        <span class="avatar-circle">O</span>
+      </button>
+
+      <div class="profile-menu" id="profileMenu">
+        <p class="profile-title">Profil OriJin</p>
+        <a href="#about">À propos</a>
+        <a href="#features">Compétences</a>
+        <a href="#gallery">Galerie</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-text">
+        <p class="badge">Nouvelle génération • OriJin</p>
+        <h1>Accélère tes projets avec OriJin.</h1>
+        <p class="hero-sub">
+          Un portfolio vivant qui montre ton univers, tes compétences et ta passion à travers une expérience fluide.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary">Commencer la visite</button>
+          <button class="btn-ghost" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Voir la galerie</button>
+        </div>
+        <p class="hero-note">Aucune carte bancaire. Juste ton style.</p>
+      </div>
+
+      <div class="hero-card">
+        <h3>Tâches automatisées</h3>
+        <p class="hero-stat">+73%</p>
+        <p class="hero-label">Temps gagné / semaine</p>
+        <p class="hero-value">12 h</p>
+        <p class="hero-status">Créativité opérationnelle</p>
+      </div>
+    </section>
+
+    <!-- FONCTIONNALITÉS -->
+    <section id="features" class="features">
+      <h2>Fonctionnalités clés</h2>
+      <p class="section-sub">
+        Tout ce dont tu as besoin pour montrer ce que tu sais faire, avec précision et style.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Automatisation avancée</h3>
+          <p>Scénarios intelligents, interactions dynamiques, logique front + back pour des expériences vivantes.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Tableaux de bord en temps réel</h3>
+          <p>Sections structurées, infos claires, mise en avant de tes projets et de tes stats perso.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Collaboration fluide</h3>
+          <p>Un site prêt à être montré à des recruteurs, amis, clients, ou à connecter à un backend.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section id="gallery" class="gallery-section">
+      <div class="gallery-header">
+        <div>
+          <h2>Galerie OriJin</h2>
+          <p class="section-sub">Tes photos, ton univers, ta vibe. Cliquer pour voir les détails.</p>
+        </div>
+        <div class="gallery-controls">
+          <input type="text" id="searchInput" placeholder="Rechercher (tags, mots-clés)...">
+        </div>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+
+        <div class="photo" data-desc="Soirée glow, vibes violettes, ambiance chill." data-tags="Sunshine">
+          <img src="Sunshine.png" alt="Photo 1">
+        </div>
+
+        <div class="photo" data-desc="Setup dev, écran, clavier, focus sur le code." data-tags="Sunlac">
+          <img src="Sun.png" alt="Photo 2">
+        </div>
+
+        <div class="photo" data-desc="Moment dehors, lumière naturelle, équilibre vie / travail." data-tags="Suncar">
+          <img src="Cars.png" alt="Photo 3">
+        </div>
+
+        <div class="photo" data-desc="Détail d’un logo, travail graphique, identité visuelle." data-tags="Sister">
+          <img src="Sister.png" alt="Photo 4">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIEWER -->
+    <div id="viewer" class="viewer">
+      <div class="viewer-content">
+        <img id="viewerImg" src="" alt="Photo en grand">
+        <div class="viewer-info">
+          <h3>Détail</h3>
+          <p id="viewerDesc"></p>
+          <p id="viewerTags" class="viewer-tags"></p>
+          <button id="viewerClose" class="btn-ghost small">Fermer</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- À PROPOS -->
+    <section id="about" class="about">
+      <h2>À propos de Jin</h2>
+      <p class="section-sub">
+        Développeur créatif, passionné par les interfaces sombres, le glow, les expériences fluides et les projets qui ont une vraie identité.
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="contact-text">
+        <h2>Contact</h2>
+        <p>Une question, un projet, une idée ? Parlons-en.</p>
+        <p>Décris ton besoin et je te répondrai avec une proposition claire et concrète.</p>
+        <p>Email : <span>contact@orijin.app</span></p>
+        <p>Support : <span>support@orijin.app</span></p>
+      </div>
+
+      <form class="contact-form">
+        <label>Nom complet</label>
+        <input type="text" placeholder="Votre nom">
+        <label>Email</label>
+        <input type="email" placeholder="vous@exemple.com">
+        <label>Message</label>
+        <textarea placeholder="Explique ton besoin..."></textarea>
+        <button type="submit" class="btn-primary">Envoyer</button>
+      </form>
+    </section>
+
+  </main>
+
+<!-- POPUP CONNEXION --> 
+ <div id="loginPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="loginTitle"> 
+    <div class="popup-frame"> 
+        <button class="popup-close" aria-label="Fermer" onclick="closePopup('loginPopup')">✕</button> 
+        <div class="popup-inner"> 
+            <div class="popup-icon">⬛</div> 
+            <h2 id="loginTitle">Se connecter</h2> 
+        <input type="email" placeholder="Email" aria-label="Email"> 
+        <input type="password" placeholder="Mot de passe" aria-label="Mot de passe"> 
+        <button class="btn-purple">Connexion</button> 
+        <p class="switch">Pas encore de compte ? <a href="#" onclick="switchPopup()">Créer un compte</a></p> 
+    </div> 
+</div> 
+</div> 
+<!-- POPUP INSCRIPTION --> 
+ <div id="registerPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="registerTitle"> 
+        <div class="popup-frame"> <button class="popup-close" aria-label="Fermer" onclick="closePopup('registerPopup')">✕</button> <div class="popup-inner"> 
+
+            <div class="popup-icon">⬛</div> <h2 id="registerTitle">Rejoindre OriJin</h2> 
+
+            <input type="text" placeholder="Prénom" aria-label="Prénom"> 
+            <input type="text" placeholder="Nom" aria-label="Nom"> 
+            <input type="email" placeholder="Adresse email" aria-label="Adresse email"> 
+            <input type="password" placeholder="Mot de passe" aria-label="Mot de passe"> 
+            <button class="btn-purple">Créer mon compte</button> 
+            
+ <p class="switch">Déjà un compte ? <a href="#" onclick="switchPopup()">Se connecter</a></p> 
+    </div> 
+</div>
+</body>
+</html>
