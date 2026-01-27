@@ -130,10 +130,6 @@ if (headerSearch) {
     }
   });
 }
-function openPopup(id) { document.getElementById(id).style.display = "flex"; } 
-function closePopup(id) { document.getElementById(id).style.display = "none"; } 
-function switchPopup() { closePopup('registerPopup'); openPopup('loginPopup'); }
-// Open / close popups
 function openPopup(id){
   const el = document.getElementById(id);
   if(!el) return;
@@ -152,7 +148,6 @@ function closePopup(id){
   document.body.style.overflow = '';
 }
 
-// Switch between login/register
 function switchPopup(){
   const login = document.getElementById('loginPopup');
   const register = document.getElementById('registerPopup');
