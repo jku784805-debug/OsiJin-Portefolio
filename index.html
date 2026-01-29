@@ -32,7 +32,7 @@
       <button class="btn-ghost" onclick="openPopup('loginPopup')">Connexion</button>
       <button class="btn-primary" onclick="openPopup('registerPopup')">Inscription</button>
       <button class="avatar-btn" id="profileToggle">
-        <span class="avatar-circle">Jin</span>
+        <span class="avatar-circle">J</span>
       </button>
 
       <div class="profile-menu" id="profileMenu">
@@ -44,7 +44,7 @@
       </div>
     </div>
   </header>
-
+  
   <main>
 
     <!-- HERO -->
@@ -53,13 +53,13 @@
         <p class="badge">Nouvelle génération • OriJin</p>
         <h1>Accélère tes projets avec OriJin.</h1>
         <p class="hero-sub">
-          Mon portfolio vivant qui montre mon univers, mes compétences et ma passion à travers une expérience fluide.
+          Un portfolio vivant qui montre ton univers, tes compétences et ta passion à travers une expérience fluide.
         </p>
         <div class="hero-actions">
           <button class="btn-primary">Commencer la visite</button>
           <button class="btn-ghost" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Voir la galerie</button>
         </div>
-        <p class="hero-note">Aucune carte bancaire. Juste mon Portfolio.</p>
+        <p class="hero-note">Aucune carte bancaire. Juste ton style.</p>
       </div>
 
       <div class="hero-card">
@@ -70,37 +70,40 @@
         <p class="hero-status">Créativité opérationnelle</p>
       </div>
     </section>
+    
+  
     <!-- À PROPOS -->
     <section id="about" class="about">
       <div class="about-content">
         <div class="profile-photo-container">
           <div class="profile-photo">
-            <img src="Jin.jpg" alt="Photo de profil de Jin">
+            <img src="Jin.png" alt="Photo de profil de Jin">
             <div class="profile-badge">Developer</div>
           </div>
         </div>
         <div class="about-text">
-          <h2>À propos de Moi</h2>
+          <h2>À propos de Jin</h2>
           <p class="section-sub">
-            Développeur créatif, passionné par les interfaces, les expériences fluides et les projets qui ont une vraie identité.
+            Développeur créatif, passionné par les interface, les expériences fluides et les projets qui ont une vraie identité.
           </p>
-          <p>Design interactif et création d'expériences numériques mémorables. Je transforme des idées en réalité avec code et créativité.</p>
+          <p>Spécialisé design interactif et création d'expériences numériques mémorables. Je transforme des idées en réalité avec code et créativité.</p>
           <div class="about-stats">
             <div class="stat">
-              <span class="stat-number">~1an</span>
+              <span class="stat-number">~1ans</span>
               <span class="stat-label">Ans d'expérience</span>
             </div>
             <div class="stat">
-              <span class="stat-number">+3</span>
-              <span class="stat-label">Projets réalisés/Finis</span>
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Projets réalisés</span>
             </div>
             <div class="stat">
-              <span class="stat-number">Indisponible</span>
+              <span class="stat-number">InDisponible</span>
               <span class="stat-label">Satisfaction client</span>
             </div>
           </div>
         </div>
       </div>
+      </body>
     </section>
 
     <!-- VIEWER -->
@@ -126,15 +129,15 @@
           <div class="tile planning-tile">
             <div class="tile-icon">📅</div>
             <h3>Planning</h3>
-            <p>Voir mon calendrier et mes disponibilité</p>
+            <p>Voir mon calendrier et ma disponibilité</p>
             <a href="https://calendar.google.com/calendar/embed?src=jku784805%40gmail.com&ctz=Europe%2FParis" target="_blank" class="tile-btn">Consulter</a>
           </div>
 
           <!-- Tuile CV/PDF -->
           <div class="tile planning-tile">
             <div class="tile-icon">📄</div>
-            <h3>Document</h3>
-            <p>Télecharger Mes Documents</p>
+            <h3>Planning</h3>
+            <p>Télecharger Mon CV et Mes Documents</p>
             <a href="https://drive.google.com/drive/folders/1RtaIL44YZa_a9wh7Q9G0ME5vNxgjrTjT?usp=drive_link" target="_blank" class="tile-btn">View</a>
           </div>
 
@@ -165,52 +168,20 @@
           </div>
 
           <!-- Tuile Documents PDF -->
-          <div class="tile linkdtre">
+          <div class="tile documents-tile">
             <div class="tile-icon">📑</div>
-            <h3>Linktree</h3>
-            <p>Mon espace / Réseau</p>
-             <a href="https://linktr.ee/Jinkun8" target="_blank" class="tile-btn">Visiter</a>
+            <h3>Documents</h3>
+            <p>Mes fichiers et présentations</p>
+            <button class="tile-btn" onclick="viewDocuments()">Voir Documents</button>
           </div>
 
         </div>
       </div>
+
     </section>
-    
-    <!-- GALERIE -->
-    <section id="gallery" class="gallery-section">
-      <div class="gallery-header">
-        <div>
-          <h2>Galerie OriJin</h2>
-          <p class="section-sub">Mes photos, Mon univers, Ma vibe. Cliquer pour voir les détails.</p>
-        </div>
-        <div class="gallery-controls">
-          <input type="text" id="searchInput" placeholder="Rechercher (tags, mots-clés)...">
-        </div>
-      </div>
-
-      <div class="gallery-grid" id="galleryGrid">
-
-        <div class="photo" data-desc="Soirée glow, vibes violettes, ambiance chill." data-tags="Sunshine">
-          <img src="Sunshine.png" alt="Photo 1">
-        </div>
-
-        <div class="photo" data-desc="Setup dev, écran, clavier, focus sur le code." data-tags="Sunlac">
-          <img src="Sun.png" alt="Photo 2">
-        </div>
-
-        <div class="photo" data-desc="Moment dehors, lumière naturelle, équilibre vie / travail." data-tags="Suncar">
-          <img src="Cars.png" alt="Photo 3">
-        </div>
-
-        <div class="photo" data-desc="Détail d’un logo, travail graphique, identité visuelle." data-tags="Sister">
-          <img src="Sister.png" alt="Photo 4">
-        </div>
-
-      </div>
-    </section>
-    
-      <!-- FONCTIONNALITÉS -->
-    
+    <body
+  
+    <!-- FONCTIONNALITÉS -->
     <section id="features" class="features">
       <h2>Fonctionnalités clés</h2>
       <p class="section-sub">
@@ -224,24 +195,25 @@
         </div>
         <div class="feature-card">
           <h3>Tableaux de bord en temps réel</h3>
-          <p>Sections structurées, infos claires, mise en avant de mes projets et de tes stats perso.</p>
+          <p>Sections structurées, infos claires, mise en avant de tes projets et de tes stats perso.</p>
         </div>
         <div class="feature-card">
           <h3>Collaboration fluide</h3>
           <p>Un site prêt à être montré à des recruteurs, amis, clients, ou à connecter à un backend.</p>
         </div>
       </div>
-    </section>
-
-
+    </body>
+   
+  <dic>
+    <main>
     <!-- CONTACT -->
     <section id="contact" class="contact">
       <div class="contact-text">
         <h2>Contact</h2>
         <p>Une question, un projet, une idée ? Parlons-en.</p>
         <p>Décris ton besoin et je te répondrai avec une proposition claire et concrète.</p>
-        <p>Email : <span>Jinyeun07@proton.me</span></p>
-        <p>Support : <span>Jin Kun</span></p>
+        <p>Email : <span>contact@orijin.app</span></p>
+        <p>Support : <span>support@orijin.app</span></p>
       </div>
 
       <form class="contact-form">
@@ -253,12 +225,13 @@
         <textarea placeholder="Explique ton besoin..."></textarea>
         <button type="submit" class="btn-primary">Envoyer</button>
       </form>
-    </section>
-
+   
+    </div>
   </main>
 
+<!-- POPUPS -->
+
 <!-- POPUP CONNEXION --> 
-  
 <div id="loginPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="loginTitle"> 
   <div class="popup-frame"> 
     <button class="popup-close" aria-label="Fermer" onclick="closePopup('loginPopup')">✕</button> 
@@ -274,7 +247,6 @@
 </div> 
 
 <!-- POPUP INSCRIPTION --> 
-  
 <div id="registerPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="registerTitle"> 
   <div class="popup-frame"> 
     <button class="popup-close" aria-label="Fermer" onclick="closePopup('registerPopup')">✕</button> 
@@ -292,7 +264,6 @@
 </div>
 
 <!-- POPUP EMAIL -->
-  
 <div id="emailPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="emailTitle">
   <div class="popup-frame">
     <button class="popup-close" aria-label="Fermer" onclick="closePopup('emailPopup')">✕</button>
@@ -307,7 +278,6 @@
 </div>
 
 <!-- POPUP TÉLÉPHONE -->
-  
 <div id="phonePopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="phoneTitle">
   <div class="popup-frame">
     <button class="popup-close" aria-label="Fermer" onclick="closePopup('phonePopup')">✕</button>
@@ -322,7 +292,6 @@
 </div>
 
 <!-- POPUP PLANNING -->
-  
 <div id="planningPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="planningTitle">
   <div class="popup-frame">
     <button class="popup-close" aria-label="Fermer" onclick="closePopup('planningPopup')">✕</button>
@@ -340,10 +309,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
