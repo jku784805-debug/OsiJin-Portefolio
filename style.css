@@ -1326,114 +1326,40 @@ section.visible {
   }
 }
 /* SECTION COMPÉTENCES DYNAMIQUES */
-#skills-dyn {
-    text-align: center;
-    padding: 60px 20px;
-    color: #fff;
-}
-
-/* Conteneur général */
-.speed-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-}
-
-/* Compteur */
-.speedometer {
-    width: 220px;
-    height: 110px;
-    border-top-left-radius: 220px;
-    border-top-right-radius: 220px;
-    background: linear-gradient(180deg, #111, #222);
+.skill-circle {
+    width: 150px;
+    height: 150px;
     position: relative;
-    overflow: hidden;
-    border: 4px solid #555;
-    box-shadow: 0 0 20px rgba(255, 100, 0, 0.3);
 }
 
-/* Aiguille */
-.needle {
-    width: 5px;
-    height: 95px;
-    background: linear-gradient(180deg, #ff3b3b, #ff9900);
+.skill-circle svg {
+    width: 150px;
+    height: 150px;
+}
+
+.skill-circle circle {
+    fill: none;
+    stroke-width: 12;
+    stroke-linecap: round;
+}
+
+.skill-circle .bg {
+    stroke: #222;
+}
+
+.skill-circle .progress {
+    stroke: #ff4d4d;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    transition: stroke-dashoffset 0.3s;
+}
+
+.skill-circle .value {
     position: absolute;
-    bottom: 0;
+    top: 50%;
     left: 50%;
-    transform-origin: bottom center;
-    transform: rotate(-90deg);
-    transition: transform 0.8s cubic-bezier(.4,2.2,.3,1);
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(255, 80, 0, 0.8);
-}
-
-/* Centre du compteur */
-.center {
-    width: 22px;
-    height: 22px;
-    background: #666;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 0;
-    left: calc(50% - 11px);
-    box-shadow: inset 0 0 10px #000;
-}
-
-/* Texte dynamique */
-.skills-output {
+    transform: translate(-50%, -50%);
     font-size: 1.4rem;
     font-weight: bold;
-    min-height: 40px;
-    color: #ffcc66;
-    text-shadow: 0 0 10px rgba(255, 150, 0, 0.7);
+    color: #fff;
 }
-
-/* Bouton principal */
-#startBoost {
-    padding: 12px 25px;
-    background: linear-gradient(90deg, #ff0000, #ff8800);
-    border: none;
-    color: white;
-    font-size: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 0 15px rgba(255, 100, 0, 0.5);
-}
-
-#startBoost:hover {
-    transform: scale(1.08);
-    filter: brightness(1.2);
-}
-
-/* Boutons Boost 1 / 2 / 3 */
-.boost-select {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 15px;
-}
-
-.boost-btn {
-    padding: 10px 18px;
-    background: linear-gradient(90deg, #ff4d4d, #ff9900);
-    border: none;
-    color: white;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.25s;
-    box-shadow: 0 0 10px rgba(255, 120, 0, 0.5);
-}
-
-.boost-btn:hover {
-    transform: scale(1.12);
-    filter: brightness(1.25);
-}
-
-
-
-
-
-
