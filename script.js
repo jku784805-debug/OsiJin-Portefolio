@@ -110,3 +110,38 @@ function copyToClipboard(elementId) {
     openPopup('phonePopup'); 
   } 
 }
+const skills = [
+    "Support Informatique",
+    "Réseau : DNS, DHCP, VLAN",
+    "Windows Server & AD DS",
+    "Diagnostic Matériel",
+    "Sécurité & Gestion utilisateurs",
+    "Développement Web : HTML / CSS / JS"
+];
+
+const needle = document.getElementById("needle");
+const skillsOutput = document.getElementById("skillsOutput");
+const startBoost = document.getElementById("startBoost");
+
+startBoost.addEventListener("click", () => {
+    let angle = -90;
+    let index = 0;
+
+    const interval = setInterval(() => {
+        angle += 30;
+        needle.style.transform = `rotate(${angle}deg)`;
+
+        if (skills[index]) {
+            skillsOutput.textContent = skills[index];
+        }
+
+        index++;
+
+        if (index > skills.length) {
+            clearInterval(interval);
+            skillsOutput.textContent = "Boost Maximum Activé ! 🚀";
+        }
+    }, 500);
+});
+
+
