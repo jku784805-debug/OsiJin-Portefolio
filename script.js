@@ -109,36 +109,28 @@ function copyToClipboard(elementId) {
   } else if (elementId === 'phone') { 
     openPopup('phonePopup'); 
   } 
-// ===============================
-// CONFIGURATION DES BOOSTS
-// ===============================
-
-// Tu peux changer les pourcentages ici
-const boostLevels = {
-    1: { percent: 40, text: "Boost Niveau 1 activé" },
-    2: { percent: 75, text: "Boost Niveau 2 activé" },
-    3: { percent: 100, text: "Boost Maximum Activé ! 🚀" }
-};
-
-// ===============================
-// FONCTION PRINCIPALE
-// ===============================
-
-function launchBoost(level) {
-    const needle = document.getElementById("needle");
-    const skillsOutput = document.getElementById("skillsOutput");
-
-    // Récupère les données du boost
-    const percent = boostLevels[level].percent;
-    const message = boostLevels[level].text;
-
-    // Convertit le pourcentage en angle (-90° → 0%, +90° → 100%)
-    const angle = -90 + (percent * 1.8);
-
-    // Animation de l’aiguille
-    needle.style.transition = "transform 0.8s cubic-bezier(.4,2.2,.3,1)";
-    needle.style.transform = `rotate(${angle}deg)`;
-
-    // Affiche le texte dynamique
-    skillsOutput.textContent = message;
 }
+function animateCircle(id, percent) {
+    const circle = document.querySelector(`#${id} .progress`);
+    const value = document.querySelector(`#${id} .value`);
+
+    let current = 0;
+    const target = percent;
+    const speed = 20; // plus petit = plus rapide
+
+    const interval = setInterval(() => {
+        if (current >= target) {
+            clearInterval(interval);
+        } else {
+            current++;
+            value.textContent = current + "%";
+            circle.style.strokeDashoffset = 440 - (440 * current) / 100;
+        }
+    }, speed);
+}
+
+// Lancer les animations
+animateCircle("html", 48);
+animateCircle("css", 45);
+animateCircle("php", 42);
+animateCircle("jquery", 39);
