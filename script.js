@@ -109,39 +109,36 @@ function copyToClipboard(elementId) {
   } else if (elementId === 'phone') { 
     openPopup('phonePopup'); 
   } 
+// ===============================
+// CONFIGURATION DES BOOSTS
+// ===============================
+
+// Tu peux changer les pourcentages ici
+const boostLevels = {
+    1: { percent: 40, text: "Boost Niveau 1 activé" },
+    2: { percent: 75, text: "Boost Niveau 2 activé" },
+    3: { percent: 100, text: "Boost Maximum Activé ! 🚀" }
+};
+
+// ===============================
+// FONCTION PRINCIPALE
+// ===============================
+
+function launchBoost(level) {
+    const needle = document.getElementById("needle");
+    const skillsOutput = document.getElementById("skillsOutput");
+
+    // Récupère les données du boost
+    const percent = boostLevels[level].percent;
+    const message = boostLevels[level].text;
+
+    // Convertit le pourcentage en angle (-90° → 0%, +90° → 100%)
+    const angle = -90 + (percent * 1.8);
+
+    // Animation de l’aiguille
+    needle.style.transition = "transform 0.8s cubic-bezier(.4,2.2,.3,1)";
+    needle.style.transform = `rotate(${angle}deg)`;
+
+    // Affiche le texte dynamique
+    skillsOutput.textContent = message;
 }
-const skills = [
-    "Support Informatique",
-    "Réseau : DNS, DHCP, VLAN",
-    "Windows Server & AD DS",
-    "Diagnostic Matériel",
-    "Sécurité & Gestion utilisateurs",
-    "Développement Web : HTML / CSS / JS"
-];
-
-const needle = document.getElementById("needle");
-const skillsOutput = document.getElementById("skillsOutput");
-const startBoost = document.getElementById("startBoost");
-
-startBoost.addEventListener("click", () => {
-    let angle = -90;
-    let index = 0;
-
-    const interval = setInterval(() => {
-        angle += 30;
-        needle.style.transform = `rotate(${angle}deg)`;
-
-        if (skills[index]) {
-            skillsOutput.textContent = skills[index];
-        }
-
-        index++;
-
-        if (index > skills.length) {
-            clearInterval(interval);
-            skillsOutput.textContent = "Boost Maximum Activé ! 🚀";
-        }
-    }, 500);
-});
-
-
